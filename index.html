@@ -396,17 +396,19 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 
 .btn-today {
   padding: 7px 14px;
-  border-radius: 20px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  color: var(--text-secondary);
-  font-size: 12px; font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--glass-border);
-  transition: var(--transition);
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(230,220,210,0.9) 100%);
+  color: var(--text-primary);
+  font-size: 12px; font-weight: 700;
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.12);
+  border-top: 2px solid rgba(255,255,255,0.8);
+  border-bottom: 2px solid rgba(0,0,0,0.15);
+  border-left: none; border-right: none;
+  transition: all 0.1s ease;
+  cursor: pointer;
 }
-.btn-today:hover { background: rgba(255,255,255,0.9); color: var(--text-primary); }
+.btn-today:hover { transform: translateY(-1px); box-shadow: 3px 5px 0px rgba(0,0,0,0.15); }
+.btn-today:active { transform: translateY(2px); box-shadow: 1px 1px 0px rgba(0,0,0,0.1); }
 
 /* Click Ripple Effect - from GitHub open source */
 .btn-add, .btn-today, .cat-chip, .sidebar-add-btn {
@@ -535,27 +537,30 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .cat-chip {
   flex-shrink: 0;
   padding: 7px 15px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 13px; font-weight: 600;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(230,220,210,0.8) 100%);
   color: var(--text-secondary);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--glass-border);
-  transition: var(--transition);
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.08);
+  border-top: 2px solid rgba(255,255,255,0.7);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  border-left: none; border-right: none;
+  transition: all 0.1s ease;
   display: flex; align-items: center; gap: 5px;
   white-space: nowrap;
+  cursor: pointer;
 }
+.cat-chip:hover { transform: translateY(-1px); box-shadow: 3px 5px 0px rgba(0,0,0,0.1); }
+.cat-chip:active { transform: translateY(2px); box-shadow: 1px 1px 0px rgba(0,0,0,0.05); }
 .cat-chip:hover { background: rgba(255,255,255,0.9); transform: translateY(-1px); }
 .cat-chip:active { transform: scale(0.95); }
 .cat-chip.active {
-  background: linear-gradient(135deg, var(--terracotta), var(--bark));
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--bark) 100%);
   color: #fff;
-  box-shadow: 0 0 12px rgba(196,145,122,0.4), 0 0 24px rgba(139,115,85,0.2), 2px 2px 0px rgba(0,0,0,0.1);
-  border-color: transparent;
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.2);
+  border-top: 2px solid rgba(255,255,255,0.4);
+  border-bottom: 2px solid rgba(0,0,0,0.25);
   transform: translateY(-1px);
-  transition: all 0.3s ease, box-shadow 0.3s ease;
 }
 .cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
@@ -711,9 +716,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   border-left: 5px solid var(--priority-medium);
-  border-top: 1px solid var(--glass-border);
-  border-right: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
+  border-top: 2px solid rgba(255,255,255,0.5);
+  border-right: 2px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.15);
   box-shadow: 4px 4px 0px rgba(0,0,0,0.08), 6px 6px 0px rgba(0,0,0,0.04);
   display: flex;
   align-items: flex-start;
@@ -724,6 +729,7 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 }
 [data-theme="dark"] .task-card {
   box-shadow: 4px 4px 0px rgba(0,0,0,0.3), 6px 6px 0px rgba(0,0,0,0.15);
+  border-top-color: rgba(255,255,255,0.1);
 }
 .task-card.priority-urgent  { border-left-color: #D43; background: rgba(224,85,85,0.16); }
 .task-card.priority-medium  { border-left-color: var(--priority-medium); background: rgba(224,160,64,0.16); }
@@ -797,14 +803,20 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .priority-picker { display: flex; gap: 8px; flex-wrap: wrap; }
 .priority-option {
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 12px; font-weight: 600;
-  background: var(--surface); color: var(--text-secondary);
-  border: 1px solid var(--glass-border);
-  transition: var(--transition);
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(220,215,205,0.7) 100%);
+  color: var(--text-secondary);
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  border-left: none; border-right: none;
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.08);
+  transition: all 0.1s ease;
   display: flex; align-items: center; gap: 6px;
+  cursor: pointer;
 }
-.priority-option:hover { background: var(--surface-hover); transform: translateY(-1px); }
+.priority-option:hover { transform: translateY(-1px); box-shadow: 3px 5px 0px rgba(0,0,0,0.1); }
+.priority-option:active { transform: translateY(2px); box-shadow: 1px 1px 0px rgba(0,0,0,0.05); }
 .priority-option.selected { color: #fff; box-shadow: var(--shadow-md); }
 .priority-option.selected.urgent { background: var(--priority-urgent); }
 .priority-option.selected.medium { background: var(--priority-medium); }
@@ -943,14 +955,19 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .sidebar-add-input::placeholder { color: var(--text-muted); }
 .sidebar-add-btn {
   padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #6B5B4A, var(--bark));
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--bark) 100%);
   color: #fff;
-  font-size: 12px; font-weight: 600;
-  transition: var(--transition);
+  font-size: 12px; font-weight: 700;
+  border: none;
+  border-bottom: 3px solid rgba(0,0,0,0.2);
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.12);
+  transition: all 0.1s ease;
   white-space: nowrap;
+  cursor: pointer;
 }
-.sidebar-add-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.sidebar-add-btn:hover { transform: translateY(-1px); box-shadow: 3px 5px 0px rgba(0,0,0,0.15); }
+.sidebar-add-btn:active { transform: translateY(2px); box-shadow: 1px 1px 0px rgba(0,0,0,0.1); border-bottom-width: 1px; }
 
 /* ============ Timeline Empty State ============ */
 .empty-state {
@@ -1010,13 +1027,15 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   background: var(--surface);
   backdrop-filter: var(--glass-blur-strong);
   -webkit-backdrop-filter: var(--glass-blur-strong);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  border-radius: 0px 24px 0px 0px;
   padding: 20px 24px 24px;
   animation: modalSlideUp 0.35s var(--ease-spring);
   max-height: 90vh;
   overflow-y: auto;
-  border: 1px solid var(--glass-border);
-  border-bottom: none;
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-left: 2px solid rgba(255,255,255,0.6);
+  border-right: 2px solid rgba(0,0,0,0.1);
+  box-shadow: 4px -2px 0px rgba(0,0,0,0.06);
 }
 .modal-handle {
   width: 36px; height: 4px;
@@ -1121,8 +1140,17 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   transition: var(--transition);
   letter-spacing: 0.5px;
 }
-.btn-cancel { background: var(--surface); color: var(--text-secondary); border: 1px solid var(--glass-border); }
-.btn-cancel:hover { background: var(--surface-hover); }
+.btn-cancel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(220,215,205,0.8) 100%);
+  color: var(--text-primary);
+  border: none;
+  border-bottom: 3px solid rgba(0,0,0,0.12);
+  box-shadow: 2px 3px 0px rgba(0,0,0,0.08);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.btn-cancel:hover { transform: translateY(-1px); box-shadow: 3px 5px 0px rgba(0,0,0,0.1); }
+.btn-cancel:active { transform: translateY(2px); box-shadow: 1px 1px 0px rgba(0,0,0,0.05); border-bottom-width: 1px; }
 .btn-save {
   background: linear-gradient(180deg, var(--terracotta) 0%, var(--bark) 100%);
   color: #fff;
