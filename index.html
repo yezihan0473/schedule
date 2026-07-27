@@ -550,9 +550,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .cat-chip:hover { background: rgba(255,255,255,0.9); transform: translateY(-1px); }
 .cat-chip:active { transform: scale(0.95); }
 .cat-chip.active {
-  background: linear-gradient(135deg, #ff6b9d, #c44dff);
+  background: linear-gradient(135deg, var(--terracotta), var(--bark));
   color: #fff;
-  box-shadow: 0 0 12px rgba(196,77,255,0.4), 0 0 24px rgba(255,107,157,0.2), 2px 2px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(196,145,122,0.4), 0 0 24px rgba(139,115,85,0.2), 2px 2px 0px rgba(0,0,0,0.1);
   border-color: transparent;
   transform: translateY(-1px);
   transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -577,14 +577,22 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 /* ============ Timeline Card (Left) ============ */
 .timeline-inner {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 0px 20px 0px 20px;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
-  border: 1px solid var(--glass-border);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.06), 6px 6px 0px rgba(0,0,0,0.03);
+  border-top: 2px solid rgba(255,255,255,0.6);
+  border-left: 2px solid rgba(255,255,255,0.6);
+  border-right: 2px solid rgba(0,0,0,0.1);
+  border-bottom: 2px solid rgba(0,0,0,0.15);
   overflow: hidden;
   transition: box-shadow 0.3s var(--ease-productive), border-color 0.3s ease;
+}
+[data-theme="dark"] .timeline-inner {
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.3), 6px 6px 0px rgba(0,0,0,0.15);
+  border-top-color: rgba(255,255,255,0.1);
+  border-left-color: rgba(255,255,255,0.1);
 }
 .timeline-inner::before {
   content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
@@ -1116,7 +1124,7 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .btn-cancel { background: var(--surface); color: var(--text-secondary); border: 1px solid var(--glass-border); }
 .btn-cancel:hover { background: var(--surface-hover); }
 .btn-save {
-  background: linear-gradient(180deg, #ff6b9d 0%, #c44dff 100%);
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--bark) 100%);
   color: #fff;
   border: none;
   border-bottom: 3px solid rgba(0,0,0,0.2);
@@ -1129,7 +1137,7 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .btn-add {
   width: 40px; height: 40px;
   border-radius: 6px;
-  background: linear-gradient(180deg, #ffd93d 0%, #ff6b6b 100%);
+  background: linear-gradient(180deg, var(--latte) 0%, var(--terracotta) 100%);
   color: #fff;
   font-size: 22px;
   display: flex; align-items: center; justify-content: center;
