@@ -1182,24 +1182,88 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 .mini-cal-day.selected { background: var(--bark); color: #fff; font-weight: 700; }
 .mini-cal-day.other { color: var(--text-muted); pointer-events: none; }
 
-/* ============ Responsive ============ */
+/* ============ Responsive - Mobile First ============ */
 @media (max-width: 768px) {
-  .main-layout { flex-direction: column; padding: 0 12px 16px; gap: 12px; }
+  /* Stack layout vertically */
+  .main-layout { flex-direction: column; padding: 0 8px 80px 8px; gap: 10px; }
+  .main-left { flex: 1; min-width: 0; }
   .main-right { flex: 1; min-width: 0; position: static; }
-  .header { padding: 14px 12px 8px; }
-  .date-bar { padding: 4px 12px 8px; }
-  .category-filter { padding: 0 12px 10px; }
-  .stats-bar { padding: 0 12px 8px; }
-  .timeline-scroll { max-height: calc(100vh - 400px); }
-  .hour-label { width: 38px; font-size: 9px; }
-  .hour-slot { min-height: 56px; }
-  .hour-content { min-height: 56px; }
-  .sidebar-card::before { display: none; }
+  .header { padding: 10px 12px 6px; }
+  .header-mascot { width: 36px; height: 36px; }
+  .header-title { font-size: 17px; }
+  .header-subtitle { font-size: 10px; }
+  .date-bar { padding: 2px 12px 6px; }
+  .date-nav button { width: 30px; height: 30px; font-size: 14px; }
+  .date-display { min-width: 100px; }
+  .date-main { font-size: 15px; }
+  .btn-today { padding: 5px 10px; font-size: 11px; }
+  .btn-add { width: 36px; height: 36px; font-size: 20px; }
+  .theme-toggle { width: 32px; height: 32px; font-size: 16px; }
+
+  /* Bento stats - compact */
+  .bento-stats { grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 0 12px 8px; }
+  .bento-card { padding: 8px 10px; gap: 6px; border-radius: var(--radius); }
+  .bento-icon { font-size: 16px; }
+  .bento-value { font-size: 16px; }
+  .bento-label { font-size: 10px; }
+  .bento-ring { width: 36px; height: 36px; }
+  .progress-ring { width: 36px; height: 36px; }
+
+  /* Category filter - scrollable pills */
+  .category-filter { padding: 0 12px 8px; gap: 6px; }
+  .cat-chip { padding: 6px 12px; font-size: 12px; border-radius: 16px; }
+
+  /* Timeline - full width with visible current time */
+  .timeline-inner { border-radius: var(--radius); }
+  .timeline-scroll { max-height: calc(100vh - 360px); }
+  .hour-label { width: 32px; font-size: 9px; padding-top: 2px; }
+  .hour-slot { min-height: 52px; }
+  .hour-content { min-height: 52px; padding: 1px 4px; }
+  .hour-content:hover { background: transparent; }
+  .task-card { padding: 7px 8px; margin: 1px 0; border-radius: 8px; }
+  .task-card:hover { transform: none; }
+  .task-title { font-size: 12px; }
+  .task-time { font-size: 9px; }
+  .task-badge { font-size: 8px; padding: 1px 5px; }
+
+  /* Sidebar cards */
+  .sidebar-card { padding: 12px; border-radius: var(--radius); }
+  .sidebar-card-title { font-size: 13px; }
+  .sidebar-card-header { margin-bottom: 8px; }
+  .checklist-item { padding: 7px 6px; }
+  .checklist-title { font-size: 12px; }
+  .checklist-check { width: 20px; height: 20px; }
+  .sidebar-add-input { padding: 6px 8px; font-size: 11px; }
+  .sidebar-add-btn { padding: 6px 10px; font-size: 11px; }
+
+  /* Modal - full screen on mobile */
+  .modal-sheet { max-width: 100%; border-radius: var(--radius-xl) var(--radius-xl) 0 0; padding: 16px 16px 20px; }
+  .modal-title { font-size: 16px; margin-bottom: 12px; }
+  .form-input, .form-select { padding: 10px 12px; font-size: 14px; }
+  .form-label { font-size: 11px; }
+  .form-row { flex-direction: column; gap: 8px; }
+  .cat-picker { gap: 6px; }
+  .cat-option { padding: 6px 10px; font-size: 11px; }
+  .priority-picker { gap: 6px; }
+  .priority-option { padding: 6px 12px; font-size: 11px; }
+  .btn { padding: 10px; font-size: 14px; }
+
+  /* Empty state */
   .empty-cat { width: 60px; height: 60px; }
+  .empty-title { font-size: 14px; }
+  .empty-hint { font-size: 11px; }
+
+  /* Mini calendar */
+  .mini-calendar { min-width: 240px; }
+  .mini-cal-day { width: 28px; height: 28px; font-size: 12px; }
+
+  /* Sidebar card decorations hidden */
+  .sidebar-card::after { display: none; }
 }
 
+/* Desktop - wider layout with borders */
 @media (min-width: 769px) {
-  .app { border-left: 1px solid rgba(229,220,208,0.5); border-right: 1px solid rgba(229,220,208,0.5); }
+  .app { border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); }
 }
 </style>
 </head>
