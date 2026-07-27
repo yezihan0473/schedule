@@ -1184,10 +1184,10 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 
 /* ============ Responsive - Mobile First ============ */
 @media (max-width: 768px) {
-  /* Stack layout vertically */
-  .main-layout { flex-direction: column; padding: 0 8px 80px 8px; gap: 10px; }
-  .main-left { flex: 1; min-width: 0; }
-  .main-right { flex: 1; min-width: 0; position: static; }
+  /* Keep two-column layout, scaled down */
+  .main-layout { flex-direction: row; padding: 0 4px 16px; gap: 6px; }
+  .main-left { flex: 1 1 52%; min-width: 0; }
+  .main-right { flex: 0 0 45%; min-width: 0; position: sticky; top: 90px; }
   .header { padding: 10px 12px 6px; }
   .header-mascot { width: 36px; height: 36px; }
   .header-title { font-size: 17px; }
