@@ -987,17 +987,10 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   position: relative;
 }
 .empty-cat {
-  width: 80px; height: 80px;
+  width: 100px; height: 100px;
   margin: 0 auto 8px;
-  font-size: 64px;
-  display: flex; align-items: center; justify-content: center;
+  background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzFwMG05OXY1cW1yaWtoazlsbXg4ZzMwNnp1a2g4cWJ3M28yZXNxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4tsLV4bExSmjDnL6lG/giphy.gif') center/contain no-repeat;
   animation: emptyFloat 3.5s ease-in-out infinite;
-}
-.empty-cat::after { content: '🐱'; }
-@keyframes emptyFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25%  { transform: translateY(-10px) rotate(-2deg); }
-  75%  { transform: translateY(-4px) rotate(2deg); }
 }
 @keyframes emptyFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
