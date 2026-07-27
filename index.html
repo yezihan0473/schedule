@@ -1637,7 +1637,9 @@ function renderTimeline() {
       const priority = task.priority || 'medium';
       const priorityLabels = {urgent:'🔴 紧急', medium:'🟡 中级', low:'🟢 不重要'};
       const totalIdx = filtered.indexOf(task);
-      html += `<div class="task-card priority-${priority}${isDone?' completed':''}" style="animation-delay:${totalIdx * 0.04}s" onclick="event.stopPropagation();onTaskClick('${task.id}')">
+      const durationMin = timeToMin(task.endTime) - timeToMin(task.startTime);
+      const cardHeight = Math.max(durationMin / 60 * 64 - 4, 54); // 64px per hour slot, minus margins
+      html += `<div class="task-card priority-${priority}${isDone?' completed':''}" style="animation-delay:${totalIdx * 0.04}s;min-height:${cardHeight}px" onclick="event.stopPropagation();onTaskClick('${task.id}')">
         <div class="task-check" onclick="event.stopPropagation();toggleTimelineComplete('${task.id}')"></div>
         <div class="task-body">
           <div class="task-title">${escHtml(task.title)}</div>
