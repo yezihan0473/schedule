@@ -1306,9 +1306,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 /* ============ Responsive - Mobile First ============ */
 @media (max-width: 768px) {
   /* Keep two-column layout, scaled down */
-  .main-layout { flex-direction: row; padding: 0 4px 16px; gap: 6px; }
-  .main-left { flex: 1 1 52%; min-width: 0; }
-  .main-right { flex: 0 0 45%; min-width: 0; position: sticky; top: 90px; }
+  .main-layout { flex-direction: row; padding: 0 2px 16px; gap: 4px; }
+  .main-left { flex: 1 1 50%; min-width: 0; }
+  .main-right { flex: 0 0 48%; min-width: 160px; position: sticky; top: 90px; }
   .header { padding: 10px 12px 6px; }
   .header-mascot { width: 36px; height: 36px; }
   .header-title { font-size: 17px; }
@@ -1348,15 +1348,16 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   .task-badge { font-size: 8px; padding: 1px 5px; }
 
   /* Sidebar cards */
-  .sidebar-card { padding: 12px; border-radius: var(--radius); }
+  .sidebar-card { padding: 8px; border-radius: var(--radius); }
   .sidebar-card-title { font-size: 13px; }
   .sidebar-card-header { margin-bottom: 8px; }
   .checklist-item { padding: 7px 6px; }
   .checklist-title { font-size: 12px; }
   .checklist-check { width: 20px; height: 20px; }
   .sidebar-add-input { padding: 6px 8px; font-size: 11px; }
-  .sidebar-add-btn { padding: 6px 10px; font-size: 11px; }
+  .sidebar-add-btn { padding: 8px 0; font-size: 11px; width: 100%; text-align: center; }
   .sidebar-add-row { flex-direction: column; gap: 4px; }
+  .sidebar-add-input { width: 100%; font-size: 11px; padding: 6px 6px; }
 
   /* Modal - full screen on mobile */
   .modal-sheet { max-width: 100%; border-radius: var(--radius-xl) var(--radius-xl) 0 0; padding: 16px 16px 20px; }
