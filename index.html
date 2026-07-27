@@ -990,8 +990,10 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   width: 100px; height: 100px;
   margin: 0 auto 8px;
   background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzFwMG05OXY1cW1yaWtoazlsbXg4ZzMwNnp1a2g4cWJ3M28yZXNxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4tsLV4bExSmjDnL6lG/giphy.gif') center/contain no-repeat;
+  mix-blend-mode: multiply;
   animation: emptyFloat 3.5s ease-in-out infinite;
 }
+[data-theme="dark"] .empty-cat { mix-blend-mode: screen; opacity: 0.8; }
 @keyframes emptyFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   25%  { transform: translateY(-10px) rotate(-2deg); }
@@ -1378,7 +1380,8 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   .btn { padding: 10px; font-size: 14px; }
 
   /* Empty state */
-  .empty-cat { width: 60px; height: 60px; }
+  .empty-cat { width: 80px; height: 80px; mix-blend-mode: multiply; }
+[data-theme="dark"] .empty-cat { mix-blend-mode: screen; opacity: 0.85; }
   .empty-title { font-size: 14px; }
   .empty-hint { font-size: 11px; }
 
