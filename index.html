@@ -670,6 +670,8 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   padding: 2px 8px;
   cursor: pointer;
   transition: background var(--transition);
+  overflow: visible;
+  z-index: 0;
 }
 .hour-content:hover { background: rgba(0,0,0,0.012); }
 [data-theme="dark"] .hour-content:hover { background: rgba(255,255,255,0.02); }
@@ -700,11 +702,12 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 
 /* Task Card */
 .task-card {
-  position: relative;
+  position: absolute;
+  top: 0; left: 0; right: 0;
   background: var(--surface);
   border-radius: 0px 12px 12px 0px;
   padding: 9px 12px;
-  margin: 2px 0;
+  margin: 0;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   border-left: 5px solid var(--priority-medium);
@@ -715,8 +718,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  z-index: 2;
+  z-index: 10;
   animation: taskEnter 0.4s var(--ease-expressive) both;
+  box-sizing: border-box;
 }
 [data-theme="dark"] .task-card {
   box-shadow: 4px 4px 0px rgba(0,0,0,0.3), 6px 6px 0px rgba(0,0,0,0.15);
@@ -1683,7 +1687,7 @@ function renderTimeline() {
       const priorityLabels = {urgent:'🔴 紧急', medium:'🟡 中级', low:'🟢 不重要'};
       const totalIdx = filtered.indexOf(task);
       const durationMin = timeToMin(task.endTime) - timeToMin(task.startTime);
-      const cardHeight = Math.max(durationMin / 60 * 64 - 4, 54); // 64px per hour slot, minus margins
+      const cardHeight = (durationMin / 60 * 64) - 2; // exactly 64px per hour, minus 2px for border
       html += `<div class="task-card priority-${priority}${isDone?' completed':''}" style="animation-delay:${totalIdx * 0.04}s;min-height:${cardHeight}px" onclick="event.stopPropagation();onTaskClick('${task.id}')">
         <div class="task-check" onclick="event.stopPropagation();toggleTimelineComplete('${task.id}')"></div>
         <div class="task-body">
