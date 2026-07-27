@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🐱 工作计划助手</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/y2k-css@0.1.14/dist/y2k.css">
 <style>
 /* ============================================================
    森系大地色 · 柔和治愈风 · 猫咪元素
@@ -1122,14 +1123,16 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 }
 .btn-save:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .btn-delete-task {
-  background: rgba(212,160,160,0.2); color: var(--rose);
-  font-size: 13px; padding: 10px;
-  border-radius: var(--radius);
-  font-weight: 600;
+  background: #ff4444; color: #fff;
+  font-size: 14px; padding: 12px;
+  border-radius: 0px 12px 0px 12px;
+  font-weight: 700;
   width: 100%; margin-top: 8px;
-  transition: var(--transition);
+  transition: all 0.15s ease;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+  letter-spacing: 1px;
 }
-.btn-delete-task:hover { background: rgba(212,160,160,0.3); }
+.btn-delete-task:hover { background: #ff2222; transform: translateY(-1px); box-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
 
 /* ============ Toast ============ */
 .toast {
@@ -1509,9 +1512,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
     <div class="form-group">
       <label class="form-label">优先级</label>
       <div class="priority-picker" id="priorityPicker">
-        <button class="priority-option urgent" onclick="selectPriority('urgent')"><span class="priority-dot" style="background:var(--priority-urgent)"></span>🔴 紧急</button>
-        <button class="priority-option medium selected" onclick="selectPriority('medium')"><span class="priority-dot" style="background:var(--priority-medium)"></span>🟡 中级</button>
-        <button class="priority-option low" onclick="selectPriority('low')"><span class="priority-dot" style="background:var(--priority-low)"></span>🟢 不重要</button>
+        <button class="priority-option urgent" onclick="selectPriority('urgent')"><span class="priority-dot" style="background:var(--priority-urgent)"></span>紧急</button>
+        <button class="priority-option medium selected" onclick="selectPriority('medium')"><span class="priority-dot" style="background:var(--priority-medium)"></span>中级</button>
+        <button class="priority-option low" onclick="selectPriority('low')"><span class="priority-dot" style="background:var(--priority-low)"></span>不重要</button>
       </div>
     </div>
     <div class="form-group">
@@ -1684,7 +1687,7 @@ function renderTimeline() {
       const cat = getCat(task.category);
       const isDone = task.isDaily ? isTaskDoneToday(task.id) : task.completed;
       const priority = task.priority || 'medium';
-      const priorityLabels = {urgent:'🔴 紧急', medium:'🟡 中级', low:'🟢 不重要'};
+      const priorityLabels = {urgent:'紧急', medium:'中级', low:'不重要'};
       const totalIdx = filtered.indexOf(task);
       const durationMin = timeToMin(task.endTime) - timeToMin(task.startTime);
       const cardHeight = (durationMin / 60 * 64) - 2; // exactly 64px per hour, minus 2px for border
