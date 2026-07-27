@@ -1121,6 +1121,18 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   100% { transform: translateY(110vh) rotate(720deg) scale(0.3); opacity: 0; }
 }
 
+/* 点击完成浮动爱心 */
+.float-heart {
+  position: fixed; pointer-events: none; z-index: 250;
+  font-size: 28px;
+  animation: heartFloat 1.5s ease-out forwards;
+}
+@keyframes heartFloat {
+  0%   { opacity:1; transform: translateY(0) scale(0.5) rotate(0deg); }
+  30%  { opacity:1; transform: translateY(-40px) scale(1.2) rotate(-10deg); }
+  100% { opacity:0; transform: translateY(-120px) scale(0.8) rotate(15deg); }
+}
+
 /* ============ Mini Calendar ============ */
 .mini-calendar {
   position: absolute; top: 100%; left: 50%;
@@ -1812,18 +1824,6 @@ function showToast(msg, duration) {
 function shakeElement(el) {
   el.style.boxShadow='0 0 0 3px rgba(196,145,122,0.3)'; el.style.animation='none'; el.offsetHeight;
   el.style.animation='shake 0.4s ease'; setTimeout(()=>{el.style.boxShadow='';el.style.animation='';},400);
-}
-
-/* 点击完成浮动爱心 */
-.float-heart {
-  position: fixed; pointer-events: none; z-index: 250;
-  font-size: 28px;
-  animation: heartFloat 1.5s ease-out forwards;
-}
-@keyframes heartFloat {
-  0%   { opacity:1; transform: translateY(0) scale(0.5) rotate(0deg); }
-  30%  { opacity:1; transform: translateY(-40px) scale(1.2) rotate(-10deg); }
-  100% { opacity:0; transform: translateY(-120px) scale(0.8) rotate(15deg); }
 }
 
 /* 庆祝撒花动画 */
