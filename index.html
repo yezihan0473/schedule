@@ -1308,9 +1308,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 /* ============ Responsive - Mobile First ============ */
 @media (max-width: 768px) {
   /* Keep two-column layout, scaled down */
-  .main-layout { flex-direction: row; padding: 0 2px 16px; gap: 4px; }
+  .main-layout { flex-direction: row; padding: 0 6px 16px; gap: 6px; }
   .main-left { flex: 1 1 58%; min-width: 0; }
-  .main-right { flex: 0 0 40%; min-width: 140px; max-width: 200px; position: sticky; top: 90px; }
+  .main-right { flex: 0 0 38%; min-width: 140px; max-width: 200px; position: sticky; top: 90px; }
   .header { padding: 10px 12px 6px; }
   .header-mascot { width: 36px; height: 36px; }
   .header-title { font-size: 17px; }
@@ -1339,7 +1339,7 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   /* Timeline - full width with visible current time */
   .timeline-inner { border-radius: var(--radius); }
   .timeline-scroll { max-height: calc(100vh - 360px); }
-  .hour-label { width: 36px; min-width: 36px; font-size: 9px; padding: 2px 0 0 0; text-align: center; flex-shrink: 0; overflow: visible; }
+  .hour-label { width: 40px; min-width: 40px; font-size: 10px; padding: 3px 0 0 0; text-align: center; flex-shrink: 0; overflow: visible; color: var(--text-primary); font-weight: 700; }
   .hour-slot { min-height: 48px; overflow: visible; }
   .hour-content { min-height: 48px; padding: 1px 2px; border-left: 1px dashed rgba(229,220,208,0.3); }
   .hour-content:hover { background: transparent; }
