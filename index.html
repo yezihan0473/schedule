@@ -1308,9 +1308,9 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
 /* ============ Responsive - Mobile First ============ */
 @media (max-width: 768px) {
   /* Keep two-column layout, scaled down */
-  .main-layout { flex-direction: row; padding: 0 4px 16px; gap: 4px; }
-  .main-left { flex: 1 1 65%; min-width: 0; }
-  .main-right { flex: 0 0 33%; min-width: 120px; position: sticky; top: 90px; }
+  .main-layout { flex-direction: row; padding: 0 2px 16px; gap: 3px; }
+  .main-left { flex: 1 1 68%; min-width: 0; }
+  .main-right { flex: 0 0 30%; min-width: 110px; position: sticky; top: 85px; }
   .header { padding: 10px 12px 6px; }
   .header-mascot { width: 36px; height: 36px; }
   .header-title { font-size: 17px; }
@@ -1336,18 +1336,18 @@ input, textarea, select { font-family: inherit; outline: none; border: none; }
   .category-filter { padding: 0 12px 8px; gap: 6px; }
   .cat-chip { padding: 6px 12px; font-size: 12px; border-radius: 16px; }
 
-  /* Timeline - full width with visible current time */
-  .timeline-inner { border-radius: var(--radius); }
-  .timeline-scroll { max-height: calc(100vh - 360px); }
-  .hour-label { width: 28px; min-width: 28px; font-size: 8px; padding: 2px 0 0 0; text-align: center; flex-shrink: 0; color: var(--text-secondary); font-weight: 600; letter-spacing: -0.5px; }
-  .hour-slot { min-height: 48px; overflow: visible; }
-  .hour-content { min-height: 48px; padding: 1px 2px; border-left: 1px dashed rgba(229,220,208,0.3); }
+  /* Timeline - compact for full visibility */
+  .timeline-inner { border-radius: var(--radius-sm); }
+  .timeline-scroll { max-height: calc(100vh - 340px); }
+  .hour-label { width: 26px; min-width: 26px; font-size: 8px; padding: 2px 0 0 0; text-align: center; flex-shrink: 0; color: var(--text-secondary); font-weight: 600; }
+  .hour-slot { min-height: 44px; overflow: visible; }
+  .hour-content { min-height: 44px; padding: 1px 2px; border-left: none; }
   .hour-content:hover { background: transparent; }
-  .task-card { padding: 7px 8px; margin: 1px 0; border-radius: 8px; }
+  .task-card { padding: 5px 6px; margin: 1px 0; border-radius: 6px; border-left-width: 3px; }
   .task-card:hover { transform: none; }
-  .task-title { font-size: 12px; }
-  .task-time { font-size: 9px; }
-  .task-badge { font-size: 8px; padding: 1px 5px; }
+  .task-title { font-size: 10px; }
+  .task-time { font-size: 8px; }
+  .task-badge { font-size: 7px; padding: 1px 4px; }
 
   /* Sidebar cards */
   .sidebar-card { padding: 8px; border-radius: var(--radius); }
